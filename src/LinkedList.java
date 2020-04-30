@@ -1,8 +1,8 @@
 public class LinkedList{
 	private Node head;
-	private Node tail;
+	private Node tail; // use this if you decide to implement 
+					   // the doubly linked list. 
 	private int size = 0;
-	
 	LinkedList(){
 		head = null;
 		tail = null;

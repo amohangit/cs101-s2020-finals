@@ -1,3 +1,8 @@
+/*
+A program written by Professor Mohan to help facilitate file
+operations. 
+This program needs no modification. 
+*/
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.charset.Charset;

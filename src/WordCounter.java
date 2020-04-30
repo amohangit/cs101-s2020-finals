@@ -1,11 +1,11 @@
 import java.util.Scanner;
-public class Dictionary{
-	private LinkedList ll = new LinkedList();
-	public void Parser(String fileName){
-		FileUtility dict = new FileUtility(fileName);
-		int size = dict.size();
+public class WordCounter{
+	private LinkedList link = new LinkedList();
+	public void parser(String fileName){
+		FileUtility words = new FileUtility(fileName);
+		int size = words.size();
 		for (int i = 0; i < size; i++){
-			String line = dict.read();	
+			String line = words.read();	
 			System.out.println(line);
 			
 			/* Here iterate through the string line and split based 
@@ -14,30 +14,28 @@ public class Dictionary{
 			Finally you can comment the print statement above. */
 
 		}
-		dict.reset();
+		words.reset();
 	}
-	public void PrintDictionary(){
-		ll.printAllNodes();
-		
+	public void printWords(){
+		link.printAllNodes();
 	}
-	public void FrequencyFinder(){
+	public void computeFrequency(){
 		System.out.println("----------------------------------");
 		System.out.println("Enter a word:");
 		Scanner scan = new Scanner(System.in);
 		String word = scan.nextLine();
-		int freq = ll.frequency(word);
+		int freq = link.frequency(word);
 		System.out.println("Frequency of word \""
 							+ word + "\" is: " + freq);
-		
 		System.out.println("Size of the linked list is:"
-							+ ll.getSize());
-
+							+ link.getSize());
+		
 	}
 	public static void main(String[] args){
-		Dictionary obj = new Dictionary();
-		obj.Parser("data/words.txt");
-		obj.PrintDictionary();
-		obj.FrequencyFinder();
+		WordCounter obj = new WordCounter();
+		obj.parser("../data/words.txt");
+		obj.printWords();
+		obj.computeFrequency();
 
 		
 	}

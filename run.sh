@@ -1,3 +1,4 @@
 #!/bin/sh
-java -cp classes $1
+cd classes
+java WordCounter
 
